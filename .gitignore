@@ -43,5 +43,5 @@ bin/
 .DS_Store
 
 ### Project stuff ###
-run/
 !run/config/**
+run/
