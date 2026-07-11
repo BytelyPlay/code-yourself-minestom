@@ -1,4 +1,4 @@
-import sun.jvmstat.monitor.MonitoredVmUtil.mainClass
+// TODO: Add Gradle ShadowUp.
 
 plugins {
     id("java")
@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation("net.minestom:minestom:2026.07.01-26.1.2")
+    implementation("ch.qos.logback:logback-classic:1.5.38")
 }
 
 application {

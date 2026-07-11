@@ -1,6 +1,5 @@
 package net.bytelyplay.codeyourselfminestom.utils;
 
-import net.kyori.adventure.key.Key;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.instance.Instance;
 import net.minestom.server.instance.anvil.AnvilLoader;

@@ -11,7 +11,8 @@ public class SpawnListener {
         Config config = Config.getInstance();
 
         e.setSpawningInstance(
-                Instances.getInstance().getHubInstance()
+                Instances.getInstance()
+                        .getHubInstance()
         );
         e.getPlayer()
                 .setRespawnPoint(
