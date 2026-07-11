@@ -43,5 +43,5 @@ bin/
 .DS_Store
 
 ### Project stuff ###
-!run/config/**
+# !run/config/** TODO: figure out how to do this
 run/
