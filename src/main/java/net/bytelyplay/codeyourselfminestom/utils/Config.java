@@ -13,7 +13,9 @@ public class Config {
 
     /**
      * Path to the world for the hub.
-     * It should only contain region files. (.mcas)
+     * It has to contain a dimensions folder then a folder called
+     * minecraft then overworld then region (everything is lowercase)
+     * which contains all the region files (.mcas)
      */
     private String pathToHubWorld = "./config/hub_world";
 
@@ -24,7 +26,6 @@ public class Config {
     public String getListenIp() {
         return listenIp;
     }
-
     public char getListenPort() {
         return listenPort;
     }
