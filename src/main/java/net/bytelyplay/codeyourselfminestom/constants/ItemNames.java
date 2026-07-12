@@ -6,8 +6,8 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 
 public class ItemNames {
-    public static final Component CREATE_PLOT_ITEM_NAME =
-            Component.text("Create Plot")
+    public static final Component PLOTS_ITEM_NAME =
+            Component.text("Plots")
                     .color(
                             TextColor.color(
                                     0,

@@ -14,7 +14,7 @@ public class OneGrassBlockLayerGenerator implements Generator {
         Point end = unit.absoluteEnd();
 
         start = start.withY(GRASS_BLOCK_Y_LEVEL);
-        end = end.withY(GRASS_BLOCK_Y_LEVEL);
+        end = end.withY(GRASS_BLOCK_Y_LEVEL + 1);
 
         unit.modifier()
                 .fill(start, end, Block.GRASS_BLOCK);
