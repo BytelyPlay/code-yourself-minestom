@@ -48,5 +48,6 @@ public abstract class InventoryGUI extends Inventory {
         );
 
         slotToButtonHashMap.put(slot, button);
+        super.setItemStack(slot, button.getItem());
     }
 }

@@ -17,6 +17,10 @@ public abstract class Button {
         this.item = baseItem;
     }
 
+    public ItemStack getItem() {
+        return item;
+    }
+
     protected abstract void click(
             @NonNull InventoryGUI gui,
             @NonNull Player p,
