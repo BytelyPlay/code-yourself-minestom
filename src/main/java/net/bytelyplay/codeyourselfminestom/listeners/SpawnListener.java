@@ -5,7 +5,7 @@ import net.bytelyplay.codeyourselfminestom.utils.Instances;
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
 
 public class SpawnListener {
-    public static void asyncPlayerConfigurationEvent(
+    public static void setupSpawn(
             AsyncPlayerConfigurationEvent e
     ) {
         Config config = Config.getInstance();

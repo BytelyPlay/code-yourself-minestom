@@ -21,9 +21,10 @@ public class EventSetup {
         EventNode<Event> miscNode =
                 EventNode.all("misc-events");
 
+        // TODO: Put this in a player events category.
         miscNode.addListener(
                 AsyncPlayerConfigurationEvent.class,
-                SpawnListener::asyncPlayerConfigurationEvent
+                SpawnListener::setupSpawn
         );
         rootNode.addChild(miscNode);
     }

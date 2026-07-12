@@ -5,8 +5,6 @@ import net.bytelyplay.codeyourselfminestom.utils.EventSetup;
 import net.minestom.server.Auth;
 import net.minestom.server.MinecraftServer;
 
-import java.nio.file.Path;
-
 public class Main {
     public static void main() {
         Config config = Config.getInstance();
