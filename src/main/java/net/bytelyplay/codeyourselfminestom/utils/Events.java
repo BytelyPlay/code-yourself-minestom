@@ -45,11 +45,7 @@ public class Events {
         );
         rootNode.addChild(playerNode);
     }
-    private void setupRootEvents(EventNode<Event> rootNode) {
-        HubRestrictionsListeners
-                .getInstance()
-                .setupHubEventListeners(rootNode);
-    }
+    private void setupRootEvents(EventNode<Event> rootNode) {}
 
     private Events() {}
 }

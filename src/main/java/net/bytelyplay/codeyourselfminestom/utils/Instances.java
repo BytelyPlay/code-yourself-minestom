@@ -4,6 +4,7 @@ import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.github.benmanes.caffeine.cache.RemovalCause;
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
+import net.bytelyplay.codeyourselfminestom.listeners.HubRestrictionsListeners;
 import net.bytelyplay.codeyourselfminestom.world.generators.OneGrassBlockLayerGenerator;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
@@ -78,7 +79,7 @@ public class Instances {
     private Instance createHubInstance() {
         Config config = Config.getInstance();
 
-        return MinecraftServer
+        Instance instance = MinecraftServer
                 .getInstanceManager()
                 .createInstanceContainer(
                         new AnvilLoader(
@@ -86,6 +87,12 @@ public class Instances {
                                 DIMENSION.key()
                         )
                 );
+
+        HubRestrictionsListeners
+                .getInstance()
+                .setupHubEventListeners(instance.eventNode());
+
+        return instance;
     }
 
     /**

@@ -37,6 +37,7 @@ public abstract class HotBarActionItem extends ActionItem {
     protected void addListeners(List<EventListener<? extends Event>> events) {
         events.add(EventListener
                 .builder(PlayerUseItemEvent.class)
+                .ignoreCancelled(false)
                 .filter(
                         e -> filterItem(
                                 e.getItemStack()
@@ -47,6 +48,7 @@ public abstract class HotBarActionItem extends ActionItem {
         );
         events.add(EventListener
                 .builder(PlayerHandAnimationEvent.class)
+                .ignoreCancelled(false)
                 .filter(
                         e -> filterItem(
                                 e.getPlayer().getItemInMainHand()

@@ -33,6 +33,7 @@ public abstract class Button {
         preClickEvent =
                 EventListener
                         .builder(InventoryPreClickEvent.class)
+                        .ignoreCancelled(false)
                         .filter(this::filterPreClickEvent)
                         .handler(e -> {
                             e.setCancelled(true);
