@@ -18,6 +18,7 @@ import net.minestom.server.world.DimensionType;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.UUID;
 
 public class Instances {
@@ -46,6 +47,9 @@ public class Instances {
     }
     public ArrayList<CachedPlotInstanceData> getInstancesForPlayerUUID(UUID uuid) {
         return playerIdToPlotInstancesCache.get(uuid);
+    }
+    public Instance getInstanceById(UUID id) {
+        throw new IllegalStateException("Not Implemented!");
     }
 
     /**

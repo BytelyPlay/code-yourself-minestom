@@ -9,18 +9,21 @@ import net.minestom.server.item.Material;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.UUID;
+
 public class PlotButton extends Button {
     private static final Logger log = LoggerFactory.getLogger(PlotButton.class);
 
-    private static final ItemStack BASE_ITEM = ItemStack
-            .of(Material.GRASS_BLOCK);
+    private final UUID plotId;
 
-    public PlotButton(EventNode<InventoryEvent> eventNode) {
-        super(BASE_ITEM, eventNode);
+    public PlotButton(ItemStack baseItem, EventNode<InventoryEvent> eventNode, UUID plotId) {
+        super(baseItem, eventNode);
+
+        this.plotId = plotId;
     }
 
     @Override
     protected void preClick(InventoryPreClickEvent e) {
-        log.info("aasdwasdqwasdwasd");
+
     }
 }
