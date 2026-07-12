@@ -30,6 +30,7 @@ public class HubRestrictionsListeners {
         setupEventListener(EntityDamageEvent.class, eventNode);
         setupEventListener(InventoryPreClickEvent.class, eventNode);
     }
+
     // TODO: Replace with something less ugly.
     private <T extends Event & CancellableEvent & InstanceEvent>
     void setupEventListener(
