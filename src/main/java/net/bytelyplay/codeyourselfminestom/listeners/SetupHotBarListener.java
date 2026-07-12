@@ -17,9 +17,8 @@ public class SetupHotBarListener {
 
         if (newInstance ==
                 instances.getHubInstance()) {
-            p.getInventory().setItemStack(0, ItemStack.of(Material.DIAMOND));
             p.getInventory().setItemStack(
-                    1,
+                    0,
                     HubHotBarItems.CREATE_PLOT_ACTION_ITEM.getItem()
             );
         }

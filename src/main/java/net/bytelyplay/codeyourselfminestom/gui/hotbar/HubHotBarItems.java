@@ -1,12 +1,7 @@
 package net.bytelyplay.codeyourselfminestom.gui.hotbar;
 
 import net.bytelyplay.codeyourselfminestom.constants.ItemNames;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.Style;
-import net.kyori.adventure.text.format.TextColor;
 import net.minestom.server.MinecraftServer;
-import net.minestom.server.event.Event;
-import net.minestom.server.event.EventNode;
 import net.minestom.server.event.player.PlayerHandAnimationEvent;
 import net.minestom.server.event.player.PlayerUseItemEvent;
 import net.minestom.server.item.ItemStack;
@@ -26,6 +21,7 @@ public class HubHotBarItems {
     public static final HotBarActionItem CREATE_PLOT_ACTION_ITEM =
             new CreatePlot();
 
+    // TEMPORARY TODO: Replace this with its own class in a file.
     private static class CreatePlot extends HotBarActionItem {
         private CreatePlot() {
             super(CREATE_PLOT_ITEM, MinecraftServer.getGlobalEventHandler());
