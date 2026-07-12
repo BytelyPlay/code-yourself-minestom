@@ -9,11 +9,8 @@ import net.minestom.server.world.DimensionType;
 import java.nio.file.Path;
 
 public class Instances {
-    private final static Instances INSTANCE =
-            new Instances();
-    private final static RegistryKey<DimensionType>
-            DIMENSION_TYPE_FOR_ALL_INSTANCES =
-            DimensionType.OVERWORLD;
+    private final static Instances INSTANCE = new Instances();
+    private final static RegistryKey<DimensionType> DIMENSION = DimensionType.OVERWORLD;
 
     private Instance hubInstance;
 
@@ -30,16 +27,14 @@ public class Instances {
     private Instance createHubInstance() {
         Config config = Config.getInstance();
 
-        Instance inst = MinecraftServer
+        return MinecraftServer
                 .getInstanceManager()
                 .createInstanceContainer(
                         new AnvilLoader(
                                 Path.of(config.getPathToHubWorld()),
-                                DIMENSION_TYPE_FOR_ALL_INSTANCES.key()
+                                DIMENSION.key()
                         )
                 );
-
-        return inst;
     }
 
     private Instances() {}

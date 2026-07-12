@@ -1,7 +1,7 @@
 package net.bytelyplay.codeyourselfminestom;
 
 import net.bytelyplay.codeyourselfminestom.utils.Config;
-import net.bytelyplay.codeyourselfminestom.utils.EventSetup;
+import net.bytelyplay.codeyourselfminestom.utils.Events;
 import net.minestom.server.Auth;
 import net.minestom.server.MinecraftServer;
 
@@ -10,7 +10,7 @@ public class Main {
         Config config = Config.getInstance();
         MinecraftServer server = MinecraftServer.init(new Auth.Online());
 
-        EventSetup.getInstance()
+        Events.getInstance()
                 .setupEvents(
                         MinecraftServer
                                 .getGlobalEventHandler()

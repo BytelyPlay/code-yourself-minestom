@@ -32,7 +32,7 @@ public abstract class HotBarActionItem {
     private final ItemStack item;
     private final EventNode<Event> rootNode;
 
-    public HotBarActionItem(
+    protected HotBarActionItem(
             ItemStack baseItem,
             EventNode<Event> eventNode
     ) {
