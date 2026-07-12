@@ -18,7 +18,7 @@ public class Inventories {
 
     public static InventoryGUI getPlotsGUI() {
          InventoryGUI gui = new InventoryGUI(INVENTORY_TYPE, INVENTORY_TITLE);
-         gui.setButton(0, new PlotButton(gui.eventNode()));
+         // gui.setButton(0, new PlotButton(gui.eventNode()));
          return gui;
     }
 }
