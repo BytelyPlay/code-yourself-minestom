@@ -1,6 +1,7 @@
 package net.bytelyplay.codeyourselfminestom.gui.inventory.buttons;
 
 import net.bytelyplay.codeyourselfminestom.gui.inventory.Button;
+import net.bytelyplay.codeyourselfminestom.utils.Instances;
 import net.minestom.server.event.EventNode;
 import net.minestom.server.event.inventory.InventoryPreClickEvent;
 import net.minestom.server.event.trait.InventoryEvent;
@@ -24,6 +25,12 @@ public class PlotButton extends Button {
 
     @Override
     protected void preClick(InventoryPreClickEvent e) {
-
+        e.getPlayer()
+                .setInstance(
+                        Instances.getInstance()
+                                .getInstanceById(
+                                        plotId
+                                )
+                );
     }
 }

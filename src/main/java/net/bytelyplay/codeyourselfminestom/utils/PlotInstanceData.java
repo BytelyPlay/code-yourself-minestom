@@ -5,9 +5,8 @@ import net.minestom.server.instance.Instance;
 
 import java.util.UUID;
 
-public record CachedPlotInstanceData(
+public record PlotInstanceData(
         UUID plotInstanceId,
         UUID ownerPlayerId,
-        Instance instance,
         Pos spawnPos
 ) {}

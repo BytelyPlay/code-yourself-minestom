@@ -17,7 +17,7 @@ public class SetupHotBarListener {
                 instances.getHubInstance()) {
             p.getInventory().setItemStack(
                     0,
-                    HotBarActionItems.CREATE_PLOT_ACTION_ITEM.getItem()
+                    HotBarActionItems.MY_PLOTS_ACTION_ITEM.getItem()
             );
         }
     }

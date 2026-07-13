@@ -10,16 +10,16 @@ import net.minestom.server.event.player.PlayerUseItemEvent;
 import net.minestom.server.item.ItemStack;
 import net.minestom.server.item.Material;
 
-public class PlotsHotBarActionItem extends HotBarActionItem {
+public class MyPlotsHotBarActionItem extends HotBarActionItem {
     private static final ItemStack BASE_ITEM_STACK =
             ItemStack.builder(Material.NETHER_STAR)
                     .customName(
                             ItemNames.PLOTS_ITEM_NAME
                     ).build();
     // This should be at the top, but due to initialization order shenanigans, it can't be.
-    private static final PlotsHotBarActionItem instance = new PlotsHotBarActionItem();
+    private static final MyPlotsHotBarActionItem instance = new MyPlotsHotBarActionItem();
 
-    private PlotsHotBarActionItem() {
+    private MyPlotsHotBarActionItem() {
         super(BASE_ITEM_STACK, MinecraftServer.getGlobalEventHandler());
     }
 
@@ -37,7 +37,7 @@ public class PlotsHotBarActionItem extends HotBarActionItem {
         p.openInventory(Inventories.getPlotsGUI());
     }
 
-    public static PlotsHotBarActionItem getInstance() {
+    public static MyPlotsHotBarActionItem getInstance() {
         return instance;
     }
 }
