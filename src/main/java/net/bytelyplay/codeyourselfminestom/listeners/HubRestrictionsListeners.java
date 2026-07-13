@@ -34,7 +34,7 @@ public class HubRestrictionsListeners {
         eventNode.addListener(
                 EventListener
                         .builder(c)
-                        .ignoreCancelled(false)
+                        .ignoreCancelled(true)
                         .handler(this::cancelEvent)
                         .build()
         );
