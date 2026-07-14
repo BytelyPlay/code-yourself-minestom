@@ -21,7 +21,7 @@ public class PlotInstances {
                 .stream()
                 .filter(
                         (entry) ->
-                                entry.getValue()
+                                entry
                                         .data()
                                         .ownerPlayerId() == playerUuid
                         )
