@@ -1,5 +1,6 @@
 package net.bytelyplay.codeyourselfminestom;
 
+import net.bytelyplay.codeyourselfminestom.utils.Commands;
 import net.bytelyplay.codeyourselfminestom.utils.Config;
 import net.bytelyplay.codeyourselfminestom.utils.Events;
 import net.minestom.server.Auth;
@@ -15,6 +16,7 @@ public class Main {
                         MinecraftServer
                                 .getGlobalEventHandler()
                 );
+        Commands.registerServerCommands(MinecraftServer.getCommandManager());
 
         server.start(
                 config.getListenIp(),

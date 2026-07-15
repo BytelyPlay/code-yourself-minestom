@@ -35,7 +35,19 @@ public class Messages {
     public static final Component TELEPORTED_TO_PLOT =
             Component.text("Teleported to the Plot");
 
+    public static final Component TELEPORTING_TO_HUB =
+            Component.text("Teleporting to the Hub");
+    public static final Component TELEPORTED_TO_HUB =
+            Component.text("Teleported to the Hub");
+
+    public static final Component ALREADY_IN_INSTANCE =
+            Component.text("You are already in this instance.");
+    public static final Component ALREADY_IN_HUB =
+            Component.text("You are already in the Hub.");
+
     public static final Component ALREADY_IN_PLOT =
             Component.text("You're already in this plot.");
 
+    public static final Component ONLY_PLAYERS_CAN_DO_THIS =
+            Component.text("Only players can do this.");
 }

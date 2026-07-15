@@ -88,6 +88,8 @@ public class PlotInstances {
                 plotInstance,
                 spawnPos
         );
+        p.getInventory().clear();
+
         p.sendMessage(Messages.TELEPORTED_TO_PLOT);
         return true;
     }
