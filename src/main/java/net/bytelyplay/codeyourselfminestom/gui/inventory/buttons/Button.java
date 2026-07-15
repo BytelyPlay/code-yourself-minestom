@@ -1,21 +1,15 @@
-package net.bytelyplay.codeyourselfminestom.gui.inventory;
+package net.bytelyplay.codeyourselfminestom.gui.inventory.buttons;
 
-import net.bytelyplay.codeyourselfminestom.gui.ActionItem;
-import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
-import net.minestom.server.event.Event;
 import net.minestom.server.event.EventListener;
 import net.minestom.server.event.EventNode;
-import net.minestom.server.event.inventory.InventoryClickEvent;
 import net.minestom.server.event.inventory.InventoryPreClickEvent;
 import net.minestom.server.event.trait.InventoryEvent;
-import net.minestom.server.event.trait.ItemEvent;
+import net.minestom.server.inventory.AbstractInventory;
 import net.minestom.server.inventory.click.Click;
 import net.minestom.server.item.ItemStack;
 import net.minestom.server.tag.Tag;
-import org.jspecify.annotations.NonNull;
 
-import java.util.List;
 import java.util.UUID;
 
 public abstract class Button {
@@ -27,7 +21,7 @@ public abstract class Button {
     private final EventListener<InventoryPreClickEvent> preClickEvent;
     private final UUID identifier = UUID.randomUUID();
 
-    protected Button(ItemStack item, EventNode<InventoryEvent> eventNode) {
+    protected Button(ItemStack item) {
         this.item = item.withTag(IDENTIFIER_TAG, identifier);
 
         preClickEvent =
@@ -37,10 +31,9 @@ public abstract class Button {
                         .filter(this::filterPreClickEvent)
                         .handler(e -> {
                             e.setCancelled(true);
-                            preClick(e);
+                            click(e.getClick(), e.getInventory(), e.getPlayer());
                         })
                         .build();
-        eventNode.addListener(preClickEvent);
     }
 
     public ItemStack getItem() {
@@ -48,10 +41,20 @@ public abstract class Button {
     }
 
     /**
-     * This is always the correct item.
-     * @param e The pre-click event.
+     * When the player clicks, this is always the right item.
+     * @param click The click instance
+     * @param inv The Inventory
+     * @param p The Player
      */
-    protected abstract void preClick(InventoryPreClickEvent e);
+    protected abstract void click(Click click, AbstractInventory inv, Player p);
+
+    /**
+     * Listens on the EventNode provided.
+     * @param node The event node to listen on
+     */
+    public void attachListenerToNode(EventNode<InventoryEvent> node) {
+        node.addListener(preClickEvent);
+    }
 
     private boolean filterPreClickEvent(InventoryPreClickEvent e) {
         ItemStack item = e.getClickedItem();

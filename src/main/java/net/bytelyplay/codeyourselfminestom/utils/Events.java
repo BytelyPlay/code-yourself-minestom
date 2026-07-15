@@ -1,7 +1,6 @@
 package net.bytelyplay.codeyourselfminestom.utils;
 
-import net.bytelyplay.codeyourselfminestom.listeners.HubRestrictionsListeners;
-import net.bytelyplay.codeyourselfminestom.listeners.SetupHotBarListener;
+import net.bytelyplay.codeyourselfminestom.listeners.HubHotBarListeners;
 import net.bytelyplay.codeyourselfminestom.listeners.SpawnListener;
 import net.minestom.server.event.Event;
 import net.minestom.server.event.EventFilter;
@@ -41,7 +40,7 @@ public class Events {
         );
         playerNode.addListener(
                 PlayerSpawnEvent.class,
-                SetupHotBarListener::playerSpawnEvent
+                HubHotBarListeners::playerSpawnEvent
         );
         rootNode.addChild(playerNode);
     }

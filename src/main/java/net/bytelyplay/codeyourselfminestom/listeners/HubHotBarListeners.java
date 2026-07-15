@@ -6,7 +6,7 @@ import net.minestom.server.entity.Player;
 import net.minestom.server.event.player.PlayerSpawnEvent;
 import net.minestom.server.instance.Instance;
 
-public class SetupHotBarListener {
+public class HubHotBarListeners {
     public static void playerSpawnEvent(PlayerSpawnEvent e) {
         Player p = e.getPlayer();
         Instance newInstance = e.getInstance();

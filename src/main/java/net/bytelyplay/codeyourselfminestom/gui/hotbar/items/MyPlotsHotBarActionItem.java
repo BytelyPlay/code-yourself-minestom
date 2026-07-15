@@ -3,6 +3,7 @@ package net.bytelyplay.codeyourselfminestom.gui.hotbar.items;
 import net.bytelyplay.codeyourselfminestom.constants.ItemNames;
 import net.bytelyplay.codeyourselfminestom.gui.hotbar.HotBarActionItem;
 import net.bytelyplay.codeyourselfminestom.gui.inventory.Inventories;
+import net.bytelyplay.codeyourselfminestom.utils.PlotInstances;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.player.PlayerHandAnimationEvent;
@@ -14,7 +15,7 @@ public class MyPlotsHotBarActionItem extends HotBarActionItem {
     private static final ItemStack BASE_ITEM_STACK =
             ItemStack.builder(Material.NETHER_STAR)
                     .customName(
-                            ItemNames.PLOTS_ITEM_NAME
+                            ItemNames.MY_PLOTS
                     ).build();
     // This should be at the top, but due to initialization order shenanigans, it can't be.
     private static final MyPlotsHotBarActionItem instance = new MyPlotsHotBarActionItem();
@@ -34,7 +35,15 @@ public class MyPlotsHotBarActionItem extends HotBarActionItem {
     }
 
     private void handleClick(Player p) {
-        p.openInventory(Inventories.getPlotsGUI());
+        p.openInventory(
+                Inventories.createMyPlotsGUI(
+                        PlotInstances
+                                .getInstance()
+                                .getPlayerPlotInstances(
+                                        p.getUuid()
+                                )
+                )
+        );
     }
 
     public static MyPlotsHotBarActionItem getInstance() {
