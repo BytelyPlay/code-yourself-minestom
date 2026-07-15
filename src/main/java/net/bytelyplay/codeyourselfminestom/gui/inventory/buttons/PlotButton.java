@@ -1,7 +1,7 @@
 package net.bytelyplay.codeyourselfminestom.gui.inventory.buttons;
 
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
-import net.bytelyplay.codeyourselfminestom.utils.CachedPlotInstanceData;
+import net.bytelyplay.codeyourselfminestom.utils.PlotInstance;
 import net.bytelyplay.codeyourselfminestom.utils.PlotInstanceData;
 import net.bytelyplay.codeyourselfminestom.utils.PlotInstances;
 import net.minestom.server.entity.Player;
@@ -28,7 +28,7 @@ public class PlotButton extends Button {
 
     @Override
     protected void click(Click click, AbstractInventory inv, Player p) {
-        Optional<CachedPlotInstanceData> optData =
+        Optional<PlotInstance> optData =
                 PlotInstances.getInstance()
                         .getPlotInstanceById(plotId);
         if (optData.isEmpty()) {
@@ -37,22 +37,11 @@ public class PlotButton extends Button {
 
             return;
         }
-        CachedPlotInstanceData cachedData = optData.orElseThrow();
-        PlotInstanceData data = cachedData.data();
-
-        Instance plotInstance = cachedData.instance();
-
-        if (plotInstance.equals(p.getInstance())) {
-            p.closeInventory();
-            p.sendMessage(Messages.ALREADY_IN_PLOT);
-
-            return;
-        }
-
-        p.setInstance(
-                plotInstance,
-                data.spawnPos()
-        );
+        PlotInstances.getInstance()
+                        .teleportPlayerToPlot(
+                                optData.orElseThrow(),
+                                p
+                        );
         p.closeInventory();
     }
 }

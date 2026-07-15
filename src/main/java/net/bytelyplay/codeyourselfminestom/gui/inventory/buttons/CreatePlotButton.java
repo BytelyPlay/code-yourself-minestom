@@ -2,7 +2,7 @@ package net.bytelyplay.codeyourselfminestom.gui.inventory.buttons;
 
 import net.bytelyplay.codeyourselfminestom.constants.ItemNames;
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
-import net.bytelyplay.codeyourselfminestom.utils.CachedPlotInstanceData;
+import net.bytelyplay.codeyourselfminestom.utils.PlotInstance;
 import net.bytelyplay.codeyourselfminestom.utils.PlotInstances;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
@@ -32,20 +32,17 @@ public class CreatePlotButton extends Button {
         p.closeInventory();
         p.sendMessage(Messages.CREATING_PLOT);
 
-        CachedPlotInstanceData cachedData = PlotInstances.getInstance()
+        PlotInstance cachedData = PlotInstances.getInstance()
                 .createPlotInstance(
                         DEFAULT_SPAWN_POS,
                         p.getUuid()
                 );
 
         p.sendMessage(Messages.CREATED_PLOT);
-        p.sendMessage(Messages.TELEPORTING_TO_PLOT);
 
-        p.setInstance(
-                cachedData.instance(),
-                cachedData.data().spawnPos()
-        );
-
-        p.sendMessage(Messages.TELEPORTED_TO_PLOT);
+        PlotInstances.getInstance()
+                .teleportPlayerToPlot(
+                        cachedData, p
+                );
     }
 }

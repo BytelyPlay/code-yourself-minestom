@@ -1,20 +1,21 @@
 package net.bytelyplay.codeyourselfminestom.utils;
 
+import net.bytelyplay.codeyourselfminestom.constants.Messages;
 import net.bytelyplay.codeyourselfminestom.world.generators.OneGrassBlockLayerGenerator;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
+import net.minestom.server.entity.Player;
 import net.minestom.server.instance.Instance;
 import net.minestom.server.instance.generator.Generator;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class PlotInstances {
     private static final PlotInstances INSTANCE = new PlotInstances();
     private static final Generator INSTANCE_GENERATOR = new OneGrassBlockLayerGenerator();
 
     //         The plot ID -> Plot instance data.
-    private final HashMap<UUID, CachedPlotInstanceData> plotIdPlotInstance =
+    private final HashMap<UUID, PlotInstance> plotIdPlotInstance =
             new HashMap<>();
 
     /**
@@ -22,7 +23,7 @@ public class PlotInstances {
      * @param playerUuid The UUID of the player.
      * @return An unmodified list containing all their plots.
      */
-    public List<CachedPlotInstanceData> getPlayerPlotInstances(UUID playerUuid) {
+    public List<PlotInstance> getPlayerPlotInstances(UUID playerUuid) {
         return plotIdPlotInstance
                 .values()
                 .stream()
@@ -35,11 +36,11 @@ public class PlotInstances {
                         )
                 .toList();
     }
-    public Optional<CachedPlotInstanceData> getPlotInstanceById(UUID plotId) {
-        CachedPlotInstanceData data = plotIdPlotInstance.get(plotId);
+    public Optional<PlotInstance> getPlotInstanceById(UUID plotId) {
+        PlotInstance data = plotIdPlotInstance.get(plotId);
         return Optional.ofNullable(data);
     }
-    public CachedPlotInstanceData createPlotInstance(Pos spawnPos, UUID playerUUID) {
+    public PlotInstance createPlotInstance(Pos spawnPos, UUID playerUUID) {
         Instance inst = MinecraftServer
                 .getInstanceManager()
                 .createInstanceContainer();
@@ -50,15 +51,45 @@ public class PlotInstances {
                 playerUUID,
                 spawnPos
         );
-        CachedPlotInstanceData cachedData = new CachedPlotInstanceData(
+        PlotInstance plot = new PlotInstance(
                 data,
                 inst
         );
         plotIdPlotInstance.put(
                 data.plotInstanceId(),
-                cachedData
+                plot
         );
-        return cachedData;
+        return plot;
+    }
+
+    /**
+     * Teleport a player to a plot.
+     * This will notify the player if it couldn't teleport successfully
+     * and also send other informational messages
+     *
+     * @param plot The plot's data
+     * @param p The player
+     * @return Whether it was successful or not
+     */
+    public boolean teleportPlayerToPlot(PlotInstance plot, Player p) {
+        p.sendMessage(Messages.TELEPORTING_TO_PLOT);
+
+        PlotInstanceData data = plot.data();
+        Instance plotInstance = plot.instance();
+
+        Pos spawnPos = data.spawnPos();
+
+        if (p.getInstance().equals(plotInstance)) {
+            p.sendMessage(Messages.ALREADY_IN_PLOT);
+            return false;
+        }
+
+        p.setInstance(
+                plotInstance,
+                spawnPos
+        );
+        p.sendMessage(Messages.TELEPORTED_TO_PLOT);
+        return true;
     }
 
     public static PlotInstances getInstance() {

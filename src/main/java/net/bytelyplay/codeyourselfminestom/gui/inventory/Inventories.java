@@ -2,7 +2,7 @@ package net.bytelyplay.codeyourselfminestom.gui.inventory;
 
 import net.bytelyplay.codeyourselfminestom.gui.inventory.buttons.CreatePlotButton;
 import net.bytelyplay.codeyourselfminestom.gui.inventory.buttons.PlotButton;
-import net.bytelyplay.codeyourselfminestom.utils.CachedPlotInstanceData;
+import net.bytelyplay.codeyourselfminestom.utils.PlotInstance;
 import net.bytelyplay.codeyourselfminestom.utils.PlotInstanceData;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -22,7 +22,7 @@ public class Inventories {
     private static final ItemStack PLOT_BUTTON_BASE_ITEM = ItemStack
             .of(Material.GRASS_BLOCK);
 
-    public static InventoryGui createMyPlotsGUI(List<CachedPlotInstanceData> plots)
+    public static InventoryGui createMyPlotsGUI(List<PlotInstance> plots)
             throws IllegalArgumentException {
         InventoryGui gui = new InventoryGui(MY_PLOTS_INVENTORY_TYPE, MY_PLOTS_INVENTORY_TITLE);
 
@@ -32,7 +32,7 @@ public class Inventories {
             );
 
         for (int i = 0; i < plots.size(); i++) {
-            CachedPlotInstanceData cachedData = plots.get(i);
+            PlotInstance cachedData = plots.get(i);
             PlotInstanceData data = cachedData.data();
 
             gui.setButton(
