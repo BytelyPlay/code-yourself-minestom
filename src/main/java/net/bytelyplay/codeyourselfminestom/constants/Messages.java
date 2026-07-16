@@ -46,14 +46,7 @@ public class Messages {
             Component.text("You are already in the Hub.");
 
     public static final Component ALREADY_IN_PLOT =
-            Component.text("You're already in this plot.")
-                    .color(
-                            TextColor.color(
-                                    255,
-                                    0,
-                                    0
-                            )
-                    );
+            Component.text("You're already in this plot.");
 
     public static final Component ONLY_PLAYERS_CAN_DO_THIS =
             Component.text("Only players can do this.");
