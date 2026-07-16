@@ -4,6 +4,7 @@ import net.bytelyplay.codeyourselfminestom.constants.ItemNames;
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
 import net.bytelyplay.codeyourselfminestom.plots.PlotInstance;
 import net.bytelyplay.codeyourselfminestom.plots.PlotInstances;
+import net.bytelyplay.codeyourselfminestom.utils.TeleportationHelpers;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
 import net.minestom.server.inventory.AbstractInventory;
@@ -40,7 +41,7 @@ public class CreatePlotButton extends Button {
 
         p.sendMessage(Messages.CREATED_PLOT);
 
-        PlotInstances.getInstance()
+        TeleportationHelpers
                 .teleportPlayerToPlot(
                         cachedData, p
                 );

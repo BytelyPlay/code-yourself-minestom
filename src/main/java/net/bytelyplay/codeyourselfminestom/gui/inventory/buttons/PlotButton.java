@@ -3,6 +3,7 @@ package net.bytelyplay.codeyourselfminestom.gui.inventory.buttons;
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
 import net.bytelyplay.codeyourselfminestom.plots.PlotInstance;
 import net.bytelyplay.codeyourselfminestom.plots.PlotInstances;
+import net.bytelyplay.codeyourselfminestom.utils.TeleportationHelpers;
 import net.minestom.server.entity.Player;
 import net.minestom.server.inventory.AbstractInventory;
 import net.minestom.server.inventory.click.Click;
@@ -35,7 +36,7 @@ public class PlotButton extends Button {
 
             return;
         }
-        PlotInstances.getInstance()
+        TeleportationHelpers
                         .teleportPlayerToPlot(
                                 optData.orElseThrow(),
                                 p
