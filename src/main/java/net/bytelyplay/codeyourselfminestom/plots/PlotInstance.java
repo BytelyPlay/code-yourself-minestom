@@ -1,4 +1,4 @@
-package net.bytelyplay.codeyourselfminestom.utils;
+package net.bytelyplay.codeyourselfminestom.plots;
 
 import net.minestom.server.instance.Instance;
 

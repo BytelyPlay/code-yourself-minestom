@@ -2,8 +2,8 @@ package net.bytelyplay.codeyourselfminestom.gui.inventory;
 
 import net.bytelyplay.codeyourselfminestom.gui.inventory.buttons.CreatePlotButton;
 import net.bytelyplay.codeyourselfminestom.gui.inventory.buttons.PlotButton;
-import net.bytelyplay.codeyourselfminestom.utils.PlotInstance;
-import net.bytelyplay.codeyourselfminestom.utils.PlotInstanceData;
+import net.bytelyplay.codeyourselfminestom.plots.PlotInstance;
+import net.bytelyplay.codeyourselfminestom.plots.PlotInstanceData;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.minestom.server.inventory.InventoryType;

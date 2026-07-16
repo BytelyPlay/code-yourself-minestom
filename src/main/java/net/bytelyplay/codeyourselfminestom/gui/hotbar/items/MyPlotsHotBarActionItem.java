@@ -3,7 +3,7 @@ package net.bytelyplay.codeyourselfminestom.gui.hotbar.items;
 import net.bytelyplay.codeyourselfminestom.constants.ItemNames;
 import net.bytelyplay.codeyourselfminestom.gui.hotbar.HotBarActionItem;
 import net.bytelyplay.codeyourselfminestom.gui.inventory.Inventories;
-import net.bytelyplay.codeyourselfminestom.utils.PlotInstances;
+import net.bytelyplay.codeyourselfminestom.plots.PlotInstances;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.player.PlayerHandAnimationEvent;

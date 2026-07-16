@@ -1,4 +1,4 @@
-package net.bytelyplay.codeyourselfminestom.utils;
+package net.bytelyplay.codeyourselfminestom.plots;
 
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
 import net.bytelyplay.codeyourselfminestom.world.generators.OneGrassBlockLayerGenerator;

@@ -2,8 +2,8 @@ package net.bytelyplay.codeyourselfminestom.gui.inventory.buttons;
 
 import net.bytelyplay.codeyourselfminestom.constants.ItemNames;
 import net.bytelyplay.codeyourselfminestom.constants.Messages;
-import net.bytelyplay.codeyourselfminestom.utils.PlotInstance;
-import net.bytelyplay.codeyourselfminestom.utils.PlotInstances;
+import net.bytelyplay.codeyourselfminestom.plots.PlotInstance;
+import net.bytelyplay.codeyourselfminestom.plots.PlotInstances;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
 import net.minestom.server.inventory.AbstractInventory;
