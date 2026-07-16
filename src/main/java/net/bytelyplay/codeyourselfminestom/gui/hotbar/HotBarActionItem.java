@@ -21,7 +21,6 @@ import java.util.UUID;
  * <br>
  * cleanAndRemove MUST be called at the end or else there will be a memory leak.
  */
-// TODO: Make it not necessary to call cleanAndRemove.
 public abstract class HotBarActionItem extends ActionItem {
     private static final String TAG_ID = "hotbar_action_item_identifier";
     private static final Tag<UUID> IDENTIFIER_TAG = Tag.UUID(TAG_ID);

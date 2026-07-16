@@ -26,7 +26,7 @@ public class HubRestrictionsListeners {
         setupEventListener(InventoryPreClickEvent.class, eventNode);
     }
 
-    // TODO: Replace with something less ugly.
+    // TODO: Replace this with something less ugly.
     private <T extends Event & CancellableEvent & InstanceEvent>
     void setupEventListener(
             Class<T> c, EventNode<InstanceEvent> eventNode

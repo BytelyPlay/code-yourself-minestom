@@ -2,9 +2,7 @@ package net.bytelyplay.codeyourselfminestom.utils;
 
 import net.bytelyplay.codeyourselfminestom.commands.FullCommand;
 import net.bytelyplay.codeyourselfminestom.commands.HubCommand;
-import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.CommandManager;
-import net.minestom.server.command.builder.Command;
 
 public class Commands {
     private final CommandManager manager;

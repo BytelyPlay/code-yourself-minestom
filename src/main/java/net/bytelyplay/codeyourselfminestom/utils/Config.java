@@ -14,7 +14,7 @@ public class Config {
     /**
      * Path to the world for the hub.
      * It has to contain a dimensions folder then a folder called
-     * minecraft then overworld then region (everything is lowercase)
+     * Minecraft then overworld then region (everything is lowercase)
      * which contains all the region files (.mcas)
      */
     private String pathToHubWorld = "./config/hub_world";
@@ -37,5 +37,6 @@ public class Config {
     public static Config getInstance() {
         return INSTANCE;
     }
+
     private Config() {}
 }
