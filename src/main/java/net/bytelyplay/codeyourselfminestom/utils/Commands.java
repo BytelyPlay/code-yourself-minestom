@@ -1,5 +1,6 @@
 package net.bytelyplay.codeyourselfminestom.utils;
 
+import net.bytelyplay.codeyourselfminestom.commands.BuildCommand;
 import net.bytelyplay.codeyourselfminestom.commands.FullCommand;
 import net.bytelyplay.codeyourselfminestom.commands.HubCommand;
 import net.minestom.server.command.CommandManager;
@@ -21,5 +22,6 @@ public class Commands {
         Commands commands = new Commands(manager);
 
         commands.register(new HubCommand());
+        commands.register(new BuildCommand());
     }
 }

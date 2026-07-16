@@ -60,6 +60,21 @@ public class PlotInstances {
         return plot;
     }
 
+    /**
+     * Retrieves the plot instance from the Minestom instance
+     * @param inst The instance
+     * @return The plot instance optional
+     */
+    public Optional<PlotInstance> getPlotInstanceFromInstance(Instance inst) {
+        return plotIdPlotInstance
+                .values()
+                .stream()
+                .filter(
+                        (plotInst) -> plotInst.instance().equals(inst)
+                )
+                .findFirst();
+    }
+
     public static PlotInstances getInstance() {
         return INSTANCE;
     }

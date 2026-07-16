@@ -50,4 +50,7 @@ public class Messages {
 
     public static final Component ONLY_PLAYERS_CAN_DO_THIS =
             Component.text("Only players can do this.");
+
+    public static final Component NOT_IN_A_PLOT =
+            Component.text("You aren't in a plot.");
 }
